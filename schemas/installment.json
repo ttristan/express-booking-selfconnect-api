@@ -1,60 +1,55 @@
 {
-  "$schema": "http://json-schema.org/schema#", 
+  "$schema": "http://json-schema.org/schema#",
   "required": [
-    "id", 
-    "number", 
-    "frequency", 
-    "installment_amount", 
+    "id",
+    "number",
+    "frequency",
+    "installment_amount",
     "interest_charge"
-  ], 
-  "type": "object", 
+  ],
+  "type": "object",
   "properties": {
     "extra_charge": {
       "$ref": "price.json"
-    }, 
+    },
     "first_installment": {
-      "type": "integer", 
+      "type": "integer",
       "description": "First installment starts after x iterations according to the frequency value"
-    }, 
+    },
     "initial_rate": {
       "$ref": "price.json"
-    }, 
+    },
     "installment_amount": {
       "$ref": "price.json"
-    }, 
+    },
     "number": {
-      "type": "integer", 
-      "description": "Number of installments (must be >1)", 
+      "type": "integer",
+      "description": "Number of installments (must be >1)",
       "example": 8
-    }, 
+    },
     "discount": {
       "$ref": "price.json"
-    }, 
+    },
     "frequency": {
-      "enum": [
-        "B", 
-        "M", 
-        "W"
-      ], 
-      "type": "string", 
-      "description": "Frequency of the installment payments. Must be one of the following values:\n- B: Biweekly\n- M: Monthly (default)\n- W: Weekly", 
+      "enum": ["B", "M", "W"],
+      "type": "string",
+      "description": "Frequency of the installment payments. Must be one of the following values:\n- B: Biweekly\n- M: Monthly (default)\n- W: Weekly",
       "example": "M"
-    }, 
+    },
     "swift_code": {
-      "type": "string", 
+      "type": "string",
       "description": "SWIFT-BIC - Bank Identifier Code"
-    }, 
+    },
     "interest_charge": {
-      "type": "number", 
-      "description": "Interest rate per installment", 
-      "format": "float"
-    }, 
+      "type": "number",
+      "description": "Interest rate per installment"
+    },
     "last_rate": {
       "$ref": "price.json"
-    }, 
+    },
     "id": {
-      "type": "string", 
-      "description": "Identifier for that installment plan", 
+      "type": "string",
+      "description": "Identifier for that installment plan",
       "example": "1-M-EUR"
     }
   }

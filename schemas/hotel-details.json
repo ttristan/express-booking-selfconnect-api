@@ -2,7 +2,12 @@
   "description": "Schema of a hotel details object",
   "title": "Hotel details object",
   "deprecated": true,
-  "required": ["name", "address1", "city", "country"],
+  "required": [
+    "name",
+    "address1",
+    "city",
+    "country"
+  ],
   "$schema": "http://json-schema.org/schema#",
   "type": "object",
   "properties": {
@@ -12,7 +17,8 @@
     },
     "name": {
       "type": "string",
-      "description": "Name of the hotel"
+      "description": "Name of the hotel",
+      "maxLength": 120
     },
     "photos": {
       "items": {
@@ -66,7 +72,8 @@
     },
     "checkinout_policy": {
       "type": "string",
-      "description": "Describes the check-in/check-out policy for the hotel. Should be in the language indicated by the 'lang'\nparameter. Max length 1000 characters."
+      "description": "Describes the check-in/check-out policy for the hotel. Should be in the language indicated by the 'lang'\nparameter.",
+      "maxLength": 1000
     }
   }
 }
